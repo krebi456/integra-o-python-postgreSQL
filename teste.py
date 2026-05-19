@@ -8,8 +8,15 @@ conexao = psycopg2.connect(
 	port = "5432"
 	)
 user_nome = str(input("insira seu nome: "))
+
 sleep(1)
+
 user_idade = int(input("insira sua idade: "))
+
+sleep(1)
+
+user_email = str(input("insira seu email: "))
+
 for c in range(3,0,-1):
     print(c)
     sleep(1)
@@ -21,7 +28,7 @@ sleep(1)
 cursor = conexao.cursor()
 
 
-cursor.execute(f"""INSERT INTO usuarios (nome,idade) VALUES ('{user_nome}', '{user_idade}')""")
+cursor.execute(f"""INSERT INTO usuarios (nome,idade,email) VALUES ('{user_nome}', '{user_idade}', '{user_email}')""")
 
 conexao.commit()
 
