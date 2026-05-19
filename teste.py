@@ -21,7 +21,7 @@ sleep(1)
 cursor = conexao.cursor()
 
 
-cursor.execute(f"""INSERT INTO usuarios (nome,idade) VALUES ({user_nome}, {user_idade})""")
+cursor.execute(f"""INSERT INTO usuarios (nome,idade) VALUES ('{user_nome}', '{user_idade}')""")
 
 conexao.commit()
 
