@@ -1,11 +1,16 @@
 import psycopg2
+import os
+from dotenv import load_dotenv
 from time import sleep
 import bcrypt
+
+load_dotenv()
+
 conexao = psycopg2.connect(
 	host = "localhost",
 	database = "projeto_banco_de_dados",
 	user = "postgres",
-	password = "123456",
+	password = os.getenv("DB_PASSWORD"),
 	port = "5432"
 	)
 user_nome = str(input("insira seu nome: "))
